@@ -32,39 +32,45 @@
    pip install -r requirements.txt
    ```
 
-3. 运行程序：
+3. 运行python程序：
    ```bash
    python gui.py
    ```
 
-4. 打包程序（可选）：
+4. 打包为exe程序（可选）：
    ```bash
-   python build.py
+   pyinstaller Windows日志分析.spec
    ```
+   <img width="1773" alt="image" src="https://github.com/user-attachments/assets/0a1e722a-98de-4b94-ac01-23373701d57b" />
 
 ## 使用说明
-
 1. 选择EVTX文件
    - 点击"浏览"按钮选择Windows事件日志文件（.evtx格式）
 
 2. 设置筛选条件（可选）
    - 事件ID：勾选并点击"选择事件"按钮
+   <img width="953" alt="image" src="https://github.com/user-attachments/assets/5964930a-ae5c-48ac-86ce-dc7b5c909eb7" />
    - 登录类型：勾选并点击"选择类型"按钮
+   <img width="1018" alt="image" src="https://github.com/user-attachments/assets/c12da044-2001-427d-b341-91948371fede" />
    - 账号筛选：勾选并输入账号关键字
+     
    - IP地址：勾选并输入IP地址
    - 时间范围：勾选并设置起止时间
 
-3. 设置输出（可选）
+4. 设置输出（可选）
    - 勾选"输出文件"
    - 选择保存路径（JSON格式）
+   <img width="956" alt="image" src="https://github.com/user-attachments/assets/df69560c-5121-46de-b144-8ecf92586671" />
 
-4. 开始分析
+5. 开始分析
    - 点击"开始分析"按钮
    - 等待分析完成
+   <img width="1354" alt="image" src="https://github.com/user-attachments/assets/1a52bf8b-d705-4c22-9a18-d66336eeaeb7" />
 
-5. 查看结果
+6. 查看结果
    - 在表格中查看详细结果
    - 在统计信息区域查看汇总数据
+   <img width="1120" alt="image" src="https://github.com/user-attachments/assets/6176db67-5de0-4013-8c98-9da0fb071b14" />
 
 ## 支持的事件类型
 
