@@ -1,0 +1,2 @@
+python-evtx>=0.7.4
+tkcalendar>=2.1.0 
