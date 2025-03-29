@@ -70,7 +70,8 @@
 6. 查看结果
    - 在表格中查看详细结果
    - 在统计信息区域查看汇总数据
-   <img width="1120" alt="image" src="https://github.com/user-attachments/assets/6176db67-5de0-4013-8c98-9da0fb071b14" />
+   <img width="969" alt="image" src="https://github.com/user-attachments/assets/79503478-fac2-4826-8b3f-84f655e40736" />
+
 
 ## 支持的事件类型
 
