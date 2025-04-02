@@ -38,7 +38,7 @@ class WindowsEventAnalyzerGUI:
         try:
             self.root = root
             self.root.title("Windows日志分析工具V1.0 - by 飞鸟")
-            self.root.geometry("800x600")
+            self.root.geometry("1200x800")
             
             # 创建主框架
             self.main_frame = ttk.Frame(self.root, padding="10")
@@ -199,7 +199,7 @@ class WindowsEventAnalyzerGUI:
             
             # 创建Treeview
             self.result_tree = ttk.Treeview(result_frame, columns=(
-                "时间", "事件ID", "事件类型", "账户", "域", "工作站", "IP地址", "登录类型"
+                "时间", "事件ID", "事件类型", "账户", "域", "工作站", "IP地址", "进程名称", "登录类型"
             ), show="headings", height=15)
             
             # 设置列标题
@@ -210,6 +210,7 @@ class WindowsEventAnalyzerGUI:
             self.result_tree.heading("域", text="域", anchor="center")
             self.result_tree.heading("工作站", text="工作站", anchor="center")
             self.result_tree.heading("IP地址", text="IP地址", anchor="center")
+            self.result_tree.heading("进程名称", text="进程名称", anchor="center")
             self.result_tree.heading("登录类型", text="登录类型", anchor="center")
             
             # 设置列宽和对齐方式
@@ -220,6 +221,7 @@ class WindowsEventAnalyzerGUI:
             self.result_tree.column("域", width=100, anchor="center")
             self.result_tree.column("工作站", width=100, anchor="center")
             self.result_tree.column("IP地址", width=100, anchor="center")
+            self.result_tree.column("进程名称", width=150, anchor="center", stretch=True)
             self.result_tree.column("登录类型", width=150, anchor="center")
             
             # 创建滚动条
@@ -382,12 +384,14 @@ class WindowsEventAnalyzerGUI:
             messagebox.showerror("错误", f"创建登录类型选择对话框时出错：{str(e)}")
 
     def update_results(self, results):
-        """更新结果显示"""
-        # 清空现有结果
+        """
+        更新结果显示
+        """
+        # 清空现有内容
         for item in self.result_tree.get_children():
             self.result_tree.delete(item)
         
-        # 添加新结果
+        # 添加新的结果
         for result in results:
             self.result_tree.insert("", "end", values=(
                 result.get("时间", ""),
@@ -397,6 +401,7 @@ class WindowsEventAnalyzerGUI:
                 result.get("域", ""),
                 result.get("工作站", ""),
                 result.get("IP地址", ""),
+                result.get("进程名称", ""),
                 result.get("登录类型", "")
             ))
 
