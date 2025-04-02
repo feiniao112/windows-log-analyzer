@@ -242,7 +242,7 @@ def save_to_excel(results, output_file):
     ws.title = "事件分析结果"
     
     # 定义表头
-    headers = ['时间', '事件ID', '事件类型', '账户', '域', '工作站', 'IP地址', '登录类型']
+    headers = ['时间', '事件ID', '事件类型', '账户', '域', '工作站', 'IP地址', '进程名称', '登录进程']
     
     # 写入表头
     for col, header in enumerate(headers, 1):
@@ -453,4 +453,4 @@ def main():
     analyze_events(args.evtx_file, args.event_ids, args.logon_types, args.account, args.output, start_time, end_time)
 
 if __name__ == "__main__":
-    main() 
+    main()
